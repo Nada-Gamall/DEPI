@@ -1,2 +1,1 @@
-# DEPI
-DEPI
+DEBI inisiative readme
