@@ -1,0 +1,118 @@
+--CREATE DATABASE foe_db;
+--Go
+--USE foe_db;
+--Go
+--CREATE TABLE Students(
+--	StudentID INT PRIMARY KEY IDENTITY(1, 1),
+--	FirstName NVARCHAR(50),
+--	LastName NVARCHAR(50),
+--	BirthDate DATE,
+--	Gender Char(1),
+--	Email NVARCHAR(100) UNIQUE
+--);
+--CREATE TABLE Professors(
+--	ProfessorID INT PRIMARY KEY IDENTITY(1, 1),
+--	FirstName NVARCHAR(50),
+--	LastName NVARCHAR(50),
+--	Department NVARCHAR(100),
+--	Email NVARCHAR(100) UNIQUE
+--);
+--CREATE TABLE Sections(
+--	SectionID INT PRIMARY KEY IDENTITY(1, 1),
+--	SectionName NVARCHAR(50),
+--	Capacity INT
+--);
+--CREATE TABLE Subjects(
+--	SubjectID INT PRIMARY KEY IDENTITY(1, 1),
+--	SubjectName NVARCHAR(100),
+--	ProfessorID INT,
+--	SectionID INT,
+--	Credits INT,
+--	FOREIGN KEY (ProfessorID) REFERENCES Professors(ProfessorID),
+--	FOREIGN KEY (SectionID) REFERENCES Sections(SectionID)
+--);
+--CREATE TABLE Gardes(
+--	GradeID INT PRIMARY KEY IDENTITY(1, 1),
+--	StudentID INT,
+--	SubjectID INT,
+--	Grade CHAR(2),
+--	FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+--	FOREIGN KEY (SubjectID) REFERENCES Subjects(SubjectID)
+--);
+--CREATE TABLE Departments(
+--	DepartmentID INT PRIMARY KEY,
+--	DepartmentName NVARCHAR(100) NOT NULL
+--);
+--DROP TABLE Departments;
+--ALTER TABLE Professors
+--ADD PhoneNumber NVARCHAR(15);
+--ALTER TABLE Professors
+--DROP COLUMN PhoneNumber;
+--INSERT INTO Professors (FirstName, LastName, Department, Email)
+--VALUES
+--('Mohamed', 'Ali', 'CS', 'cs_M_Ali@example.com'),
+--('Ahmed', 'Ali', 'CS', 'cs_A_Ali@example.com');
+--TRUNCATE TABLE Professors;
+--INSERT INTO Students (FirstName, LastName, BirthDate, Gender, Email)
+--VALUES
+--('Mostafa', 'Badr', '2010-07-03', 'M', 'Mostafa_Badr@gmail.com'),
+--('John', 'Doe', '2001-05-15', 'M', 'john.doe@example.com'),
+--('Jane', 'Smith', '2002-09-30', 'F', 'jane.smith@example.com'),
+--('Ali', 'Khan', '2000-11-22', 'M', 'ali.khan@example.com'),
+--('Sara', 'Ahmed', '2001-01-14', 'F', 'sara.ahmed@example.com'),
+--('Michael', 'Brown', '2003-03-05', 'M', 'michael.brown@example.com'),
+--('Emily', 'Davis', '2002-07-18', 'F', 'emily.davis@example.com'),
+--('Omar', 'Hassan', '2001-08-12', 'M', 'omar.hassan@example.com');
+
+--INSERT INTO Professors (FirstName, LastName, Department, Email)
+--VALUES 
+--('Dr. Adam', 'White', 'Civil Engineering', 'adam.white@example.com'),
+--('Dr. Nancy', 'Taylor', 'Mechanical Engineering', 'nancy.taylor@example.com'),
+--('Dr. Robert', 'Wilson', 'Electrical Engineering', 'robert.wilson@example.com'),
+--('Dr. Linda', 'Green', 'Computer Science', 'linda.green@example.com'),
+--('Dr. James', 'Black', 'Chemical Engineering', 'james.black@example.com');
+
+--INSERT INTO Professors (FirstName, Department, Email)
+--VALUES 
+--('Dr. Medhat','Civil Engineering', 'Medhat@example.com');
+
+--INSERT INTO Sections (SectionName, Capacity)
+--VALUES 
+--('Section A', 30),
+--('Section B', 25),
+--('Section C', 20),
+--('Section D', 35),
+--('Section E', 40);
+
+--INSERT INTO Subjects (SubjectName, ProfessorID, SectionID, Credits)
+--VALUES 
+--('Mathematics I', 1, 1, 3),
+--('Physics I', 2, 2, 3),
+--('Programming Basics', 4, 3, 4),
+--('Thermodynamics', 3, 4, 3),
+--('Fluid Mechanics', 5, 5, 3),
+--('Digital Logic Design', 4, 1, 4),
+--('Structural Analysis', 1, 2, 4);
+
+--INSERT INTO Gardes (StudentID, SubjectID, Grade)
+--VALUES 
+--(1, 1, 'A'),
+--(2, 1, 'B'),
+--(3, 2, 'A'),
+--(4, 3, 'C'),
+--(5, 4, 'B'),
+--(6, 5, 'A'),
+--(7, 6, 'C'),
+--(1, 7, 'B');
+
+--UPDATE Professors
+--SET Email = 'updated_email@example.com'
+--WHERE ProfessorID = 8;
+
+--INSERT INTO Sections (SectionName, Capacity)
+--VALUES ('Physics Lab', 25);
+
+--DELETE FROM Sections
+--WHERE SectionID = 6;
+
+--SELECT * FROM Students;
